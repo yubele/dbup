@@ -111,9 +111,9 @@ EOL;
     public function sort()
     {
         return function (\SplFileInfo $a, \SplFileInfo $b) {
-            preg_match(self::PATTERN, $a->getFileName(), $version_a);
-            preg_match(self::PATTERN, $b->getFileName(), $version_b);
-            return ((int)$version_a[1] < (int)$version_b[1]) ? -1 : 1;
+            $stat_a = stat($a);
+            $stat_b = stat($b);
+            return ((int)$stat_a[9] < (int)$stat_b[9]) ? -1 : 1;
         };
     }
 

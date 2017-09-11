@@ -1,4 +1,4 @@
-PHP_BIN=$(shell which php)
+PHP_BIN=$(shell which php56)
 CURL_BIN=$(shell which curl)
 SINCE=v0.1
 UNTIL=HEAD
